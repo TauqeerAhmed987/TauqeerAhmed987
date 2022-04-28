@@ -1,0 +1,15 @@
+<div *ngIf="vendorTypes" class="" style="background-color: white;padding:15px">  
+    <p style="font: normal normal normal 28px/34px Circular Std Black;">Top Stylist</p>
+<ul class="list-unstyled">
+<li  *ngFor="let vendorType of vendorTypes; let index=index">
+    <a routerLink="/specialists/{{vendorType.name}}">   <div class="row" style="padding-top: 16px;padding-bottom: 15px;">
+        <div class="col-5"><img style="width: 80px;border-radius: 8px;" src="{{vendorType.imgUrl}}"></div>
+        <div class="col-7">
+            <p class="ml-1">{{vendorType.name}}</p>
+            <p>
+                <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly" style="color: #EAC739;font-size: 20px;"></rating>
+            </p>
+        </div>
+    </div></a></li>
+</ul>
+</div>

@@ -1,0 +1,463 @@
+.tab-panel {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .nav-tabs > li.open, .member-tabset > .nav-tabs > li:hover {
+    border-bottom: 4px solid #fbcdcf;
+  }
+  
+  .member-tabset > .nav-tabs > li.open > a, .member-tabset > .nav-tabs > li:hover > a {
+    border: 0;
+    background: none !important;
+    color: #333333;
+  }
+  
+  .member-tabset > .nav-tabs > li.open > a > i, .member-tabset > .nav-tabs > li:hover > a > i {
+    color: #a6a6a6;
+  }
+  
+  .member-tabset > .nav-tabs > li.open .dropdown-menu, .member-tabset > .nav-tabs > li:hover .dropdown-menu {
+    margin-top: 0px;
+  }
+  
+  .member-tabset > .nav-tabs > li.active {
+    border-bottom: 4px solid #E95420;
+    position: relative;
+  }
+  
+  .member-tabset > .nav-tabs > li.active > a {
+    border: 0 !important;
+    color: #333333;
+  }
+  
+  .member-tabset > .nav-tabs > li.active > a > i {
+    color: #404040;
+  }
+  
+  .member-tabset > .tab-content {
+    margin-top: -3px;
+    background-color: #fff;
+    border: 0;
+    border-top: 1px solid #eee;
+    padding: 15px 0;
+  }
+  .our-button{
+    background: var(--unnamed-color-eac739) 0% 0% no-repeat padding-box;
+background: #EAC739 0% 0% no-repeat padding-box;
+border-radius: 10px;
+opacity: 1;
+padding:15px;
+  }
+  body{
+    background-color: #F3F3F3;
+  }
+
+  a{
+    text-decoration:none;
+  }
+  .col {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/********** Hamza Request list page css  *********/
+/* sf pro display  */
+
+@font-face {
+  font-family: 'sfbold';
+  src: url(src/assets/font/SFPRODISPLAYBOLD.ttf);
+}
+@font-face {
+  font-family: 'sfmed';
+  src: url(src/assets/font/SFPRODISPLAYMEDIUM.ttf);
+}
+@font-face {
+  font-family: 'sfreg';
+  src: url(src/assets/font/SFPRODISPLAYREGULAR.ttf);
+}
+/* sf pro display  */
+
+/* sf pro text  */
+@font-face {
+  font-family: 'sft-semi';
+  src: url(src/assets/font/SF-Pro-Text-Semibold.ttf);
+}
+@font-face {
+  font-family: 'sft-bold';
+  src: url(src/assets/font/SF-Pro-Text-Bold.ttf);
+}
+@font-face {
+  font-family: 'sft-light';
+  src: url(src/assets/font/SF-Pro-Text-Light.ttf);
+}
+@font-face {
+  font-family: 'sft-med';
+  src: url(src/assets/font/SF-Pro-Text-Medium.ttf);
+}
+@font-face {
+  font-family: 'sft-reg';
+  src: url(src/assets/font/SF-Pro-Text-Regular.ttf);
+}
+/* sf pro text  */
+
+.request-list-row .nav-link.active {
+  background: #48888A;
+  border-radius: 5px;
+  color: white;
+}
+
+.request-list-row .nav-link {
+  width: 390px;
+  text-align: center;
+  color: #48888A;
+  font-size: 22px;
+  font-family: 'sfmed';
+}
+.request-container {
+  background: white;
+  box-shadow: 0px 3px 35px #0000000F;
+border-radius: 15px;
+padding: 10px 90px;
+}
+.request-container .nav {
+  position: relative;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.request-container .tab-content {
+  padding-left: 80px;
+}
+.request-container .tab-content .tab-pane .col-md-6 p:nth-child(1 ) {
+  font-size: 22px;
+  color: #1E2022;
+  margin-bottom: 0;
+}
+
+.request-container .tab-content .tab-pane .col-md-6 p:nth-child(2) {
+  color: #8a8a8a;
+  margin-bottom: 0;
+}
+
+.request-container .tab-content .accepted {
+  padding: 5px 30px;
+  background: #48888A;
+  color: white;
+}
+.request-container .tab-content .pending {
+  padding: 5px 30px;
+  background: transparent;
+  color: #888888;
+  border: 1px solid #888888;
+}
+.request-container .tab-content button {
+  font-family: 'sfreg';
+ 
+}
+.request-container .tab-content button:focus {
+  box-shadow: 0 0 0 0.25rem #48888a73;
+}
+.request-row {
+  padding: 40px 0;
+  border-bottom: 1px solid #70707045;
+  align-items: center;
+}
+.request-row:last-child {
+  border: none;
+}
+.request-container .tab-content .tab-pane .col-md-6 p {
+  font-family: 'sfmed';
+}
+.request-container .nav:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  background-image: url(src/assets/calendar.svg);
+  background-size: 100% 100%;
+  width: 50px;
+  height: 60px;
+}
+.modal1-toprow .col-3 img {
+  width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+  border-radius: 15px;
+}
+.modal1-inner {
+  height: 100%;
+}
+
+.modal1-dialog {
+  border-radius: 49px;
+  max-width: 650px;
+  border: none;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.modal1-content {
+  border: none;
+  border-radius: 49px;
+  padding: 40px 70px;
+}
+.modal1-toprow .col-9 h3 {
+  font-size: 22px;
+  font-family: 'sft-semi';
+  color: #1E2022;
+}
+
+.modal1-toprow .col-9 h4 {
+  font-size: 16px;
+  color: #77838F;
+  font-family: 'sft-reg';
+  letter-spacing: 0.72px;
+}
+
+.stars-icon i {
+  color: #EAC739;
+  font-size: 19px;
+  margin-right: 7px;
+}
+.stars-icon span {
+  font-size: 16px;
+  color: #77838F;
+  font-family: 'sft-med';
+  letter-spacing: 1px;
+}
+
+.stars-icon i:nth-child(5) {
+  color: #CFCFCF;
+}
+
+.modal1-content .close {
+  color: black;
+  font-size: 16px;
+  font-family: 'sft-reg';
+  opacity: 1;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.modal1-content .modal-header {
+  padding: 0;
+  border: none;
+  padding-bottom: 40px;
+}
+
+.modal1-content .close i {
+  font-size: 15px;
+  margin-right: 5px;
+  
+}
+.modal1-toprow {
+  border-bottom: 2px solid #70707029;
+  padding-bottom: 30px;
+  margin: 0;
+}
+.modal1-toprow .col-3 {
+  padding-left: 0;
+}
+
+.modal1-body {
+  padding: 0;
+}
+
+.modal1-inner h2 {
+  font-size: 22px;
+  color: #1E2022;
+  font-family: 'sfbold';
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.modal1-inner p {
+  font-size: 16px;
+  line-height: 25px;
+  font-family: 'sft-reg';
+  color: black;
+  letter-spacing: -0.41px;
+}
+
+.m1-btn a {
+  display: inline-block;
+  box-shadow: 0px 3px 25px #0000000D;
+  border-radius: 6px;
+  width: 153px;
+  height: 56px;
+  text-align: center;
+  line-height: 56px;
+  margin-right: 17px;
+  font-size: 16px;
+  font-family: 'sfreg';
+  color: #48888A;
+  letter-spacing: 0.41px;
+  transition: all .3s ease-in-out;
+}
+.m1-btn a:hover {
+  text-decoration: none;
+  background-color: #48888A;
+  color: white;
+}
+.modal {
+  padding-right: 0 !important;
+}
+.modal2-innerrow .col-4 img {
+  width: 100%;
+  image-rendering: -webkit-optimize-contrast;
+}
+.modal2-innerrow .col-8 h2 {
+  font-size: 17px;
+  color: #1E2022;
+  font-family: 'sfbold';
+  letter-spacing: 0.72px;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.modal2-innerrow .col-8 h3 {
+  font-size: 16px;
+  color: #77838F;
+  font-family: 'sfreg';
+  margin: 0;
+}
+
+.modal2-innerrow .col-8 {
+  padding-left: 15px;
+}
+.modal2-toprow .col-5 {
+  text-align: right;
+}
+.modal2-toprow .col-5 h2 {
+  border: 1px solid #1E2022;
+  border-radius: 3px;
+  font-size: 15px;
+  font-family: 'sfmed';
+  padding: 4px 0;
+}
+.r-btn {
+  max-width: 110px;
+  text-align: center;
+  margin-left: auto;
+}
+.modal2-toprow .col-5 h3 {
+  font-size: 16px;
+  color: #48888A;
+  font-family: 'sfreg';
+}
+.modal2-toprow {
+  padding-bottom: 30px;
+  border-bottom: 3px solid #7070701a;
+}
+.modal2-toprow {
+  padding-bottom: 30px;
+  border-bottom: 3px solid #7070701a;
+  margin: 0;
+}
+
+.oppointment-time {
+  width: 100%;
+  min-height: 100px;
+  background: white;
+  box-shadow: 0px 2px 25px #0000000F;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.modal2-body {
+  padding: 0;
+}
+
+.oppointment-time h2 {
+  font-size: 15px;
+  line-height: 16px;
+  margin: 0;
+  font-family: 'sfreg';
+  color: #77838F;
+}
+
+.oppointment-time h3 {
+  font-size: 20px;
+  font-family: 'sfbold';
+  color: #1E2022;
+  margin-top: 10px;
+}
+button.arrived {
+  width: 100%;
+  background: #EAC739;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  min-height: 75px;
+  font-size: 20px;
+  color: white;
+  font-family: 'sft-semi';
+  margin-top: 30px;
+  transition: all .3s ease-in-out;
+}
+button.arrived:hover {
+  background: transparent;
+  border-color: #EAC739;
+  color: #EAC739;
+}
+.modal2 .modal1-content {
+  padding: 70px;
+}
+.Experience h1 {
+  font-size: 18px;
+  font-family: 'sfbold';
+  color: #132D2E;
+}
+
+.exp-star i {
+  color: transparent;
+  -webkit-text-stroke: 2px #77838F;
+  font-size: 18px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.exp-star {
+  margin-top: 10px;
+}
+
+.Experience textarea {
+  width: 100%;
+  border: 1px solid #b5bcc3ba;
+  border-radius: 8px;
+  resize: none;
+  margin-top: 20px;
+  padding: 15px;
+}
+.Experience textarea::placeholder {
+  font-size: 16px;
+  color: #77838F;
+  opacity: 42%;
+}
+.Experience textarea:focus {
+  box-shadow: none;
+  border-color: #b5bcc3ba;
+}
+
+.Experience {
+  align-items: stretch;
+  text-align: center;
+  padding: 30px 25px 25px;
+}
+.modal3 button.arrived {
+  margin-top: 20px;
+}
+.none {
+  display: none !important;
+}
+
+
+/********** Hamza Request list page css  *********/

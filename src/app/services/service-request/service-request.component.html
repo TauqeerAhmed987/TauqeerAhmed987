@@ -1,0 +1,151 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 mt-4 mb-4">
+            <h2 class="text-uppercase">Submit Request</h2>
+        </div>
+    </div> <form [formGroup]='requestForm' *ngIf="requestForm" (ngSubmit)="submitRequest()" autocomplete="off" id="myForm">
+                            <div class="container" style="background-color: white;box-shadow: 0px 3px 35px #0000000F;">
+                           <div class="row"> <div class="col-6">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                    <div id="formWrapper">
+                                            
+                                              <div>
+                                                <label for="street">Address</label>
+                                            
+                                              <div class="input-group mb-3">
+                                                <input type="text" class="form-control" name="StreetAddress" [formControl]='requestForm.controls["streetAddress"]' 
+                                                placeholder="Address" aria-label="Address">
+                                                <div class="input-group-append">
+                                                  <button style="background-color:#D19D01;color:white;" 
+                                                  class="btn btn-outline-secondary" type="button"><i class="fa fa-map-marker"></i> 
+                                                  Share Location</button>
+                                                </div>
+                                              </div>  </div>
+
+                                              <div class="form-row">
+                                                <div class="form-group col-md-8">
+                                                  <label for="inputCity">City</label>
+                                                  <app-text-input name="city" [formControl]='requestForm.controls["city"]' 
+                                            label='City'></app-text-input>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                  <label for="inputZip">Zip</label>
+                                                  <app-text-input name="zip" [formControl]='requestForm.controls["zip"]' 
+                                            label='Zip'></app-text-input>
+                                                </div>
+                                              </div>
+                                                  <div class="form-group">
+                                                    <label for="time">Time</label>
+                                                    <!-- 
+                                                    <app-text-input [formControl]='requestForm.controls["time"]' 
+                                              label='Time'></app-text-input> -->
+                                              <timepicker [(ngModel)]="myTime" 
+                                              [formControl]='requestForm.controls["time"]' 
+                                              [arrowkeys]="allowArrowKeys"></timepicker>
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                    <label for="day">Date</label>
+                                                  
+                                              <input type="text"
+           placeholder="Pick a date"
+           class="form-control" 
+           [formControl]='requestForm.controls["day"]'
+           bsDatepicker>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    <app-text-input name="phone" [formControl]='requestForm.controls["phone"]' 
+                                              label='Phone'></app-text-input>
+                                                  </div>
+                                                <div class="row" *ngIf="validationErrors.length > 0">
+                                                    <ul class="text-danger">
+                                                        <li *ngFor="let error of validationErrors">
+                                                            {{error}}
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                            
+                                        <!-- </form> -->
+                                      </div>  
+                            </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            
+                                              <div>
+                                                <p>Selected Service</p>
+                                                <div class="form-row">
+                                                  <div class="form-group col-md-3">
+                                                   
+                                                      <img class="img-fluid w-100" style="max-width:125px;"
+                                                      src="{{this.service.imgUrl}}">
+                                                  
+                                                  </div>
+                                                  <div class="form-group col-md-4">
+                                                    
+                                                      <p>{{this.service.name}}</p>
+                                                      <p>${{this.service.price}}</p>
+
+                                                  </div>
+                                                </div>
+
+                                              </div>
+                                            
+                                              <div class="input-group mb-3">
+                                                  <input type="text" class="form-control" 
+                                                  name="discountCode"
+                                                  [formControl]='requestForm.controls["discountCode"]' 
+                                                  placeholder="Enter voucher number" 
+                                                  aria-label="Enter voucher number" aria-describedby="basic-addon2">
+                                                  <div class="input-group-append">
+                                                    <button style="background-color: #D19D01;color:white;" 
+                                                    class="btn btn-outline-secondary" 
+                                                    id='submit-search' type='submit' >Apply</button>
+                                                  </div>          
+                                              </div> 
+                            <br>
+<table style="width:100%">
+  <tr>
+      <td>Cost</td>
+      <td class="text-right">{{this.service.price | currency}}</td>
+  </tr>
+  <tr>
+      <td>Service Charges</td>
+      <td class="text-right">{{this.serviceFee |currency}}</td>
+  </tr>
+    <tr>
+        <td>Discount</td>
+        <td class="text-right">{{discountAmt |currency}}</td>
+    </tr>
+    <tr>
+        <td>Total Due</td>
+        <td class="text-right" style="text-align: right;
+        letter-spacing: 0px;
+        color: #D19D01;
+        opacity: 1;">{{this.totalFee | currency}}</td>
+    </tr>
+</table>
+<input type="hidden" [formControl]='requestForm.controls["serviceId"]' value="{{this.service.id}}" />
+<input type="hidden" [formControl]='requestForm.controls["serviceCharge"]' value="{{this.serviceCharge}}" />
+<input type="hidden" [formControl]='requestForm.controls["serviceCost"]'  value="{{this.service.price}}" />
+<input type="hidden" [formControl]='requestForm.controls["totalDue"]' value="{{this.totalFee}}" />
+    </div>
+    </div> <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn mr-2 btn btn-block our-button mt-5" 
+            
+             class="btn mr-2 our-button btn-block" type="submit"
+            >Submit Request</button>
+            
+   </div>
+    </div>
+                                </div>
+  
+                               
+                            </div></div>
+                         </div> </form> 
+    </div>    

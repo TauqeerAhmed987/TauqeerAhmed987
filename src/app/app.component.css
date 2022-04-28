@@ -1,0 +1,8 @@
+body{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;  
+}
+
+.accountContainer-width{
+    max-width: 1000px;
+}

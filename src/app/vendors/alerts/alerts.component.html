@@ -1,0 +1,20 @@
+<div class="container" *ngIf="alerts !=null && alerts.length > 0" style="background-color: white;box-shadow: 0px 3px 35px #0000000F;">
+    <div class="row"> <div class="col-12">
+         <div class="pl-5 pr-5 pb-5 pt-5">
+               <div class="row" *ngFor="let request of alerts; let index=index" >
+                 <div class="col-md-6">
+                   <p><b>{{request.firstName}} requested {{request.serviceName}}</b>
+                   <br>Pay : ${{request.serviceCost}}<br>
+                   When : {{request.day | date}} {{request.day | date:'shortTime'}}<br>
+                   Where : {{request.city}} {{request.zip}}</p>
+                 </div>
+                 <div class="col-md-6 text-right">
+                     One Hour Reminder : <ui-switch [(ngModel)]="request.oneHourReminder"></ui-switch><br/>
+                   <button class="btn btn-lg pull-right" style="background-color:#EAC739;" 
+                   (click)="acceptRequest(request.id,request.oneHourReminder)">Accept</button>
+                 </div><hr>
+               </div>
+     </div>
+     </div>
+     </div>
+    </div>

@@ -1,0 +1,73 @@
+
+    .topOfTop {
+        background: #D19D0112 0% 0% no-repeat padding-box;
+    }
+
+    nav {
+        background: #D19D0112 0% 0% no-repeat padding-box;
+    }
+
+    #homePage-hashTag {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-17) Circular Std Bold;
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-48888a);
+        text-align: left;
+        font: normal normal normal 20px/17px Circular Std Bold;
+        letter-spacing: 0px;
+        color: #48888A;
+        opacity: 1;
+    }
+
+    #aboutUsSection {
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-48888a);
+        text-align: left;
+        font: normal normal normal Circular Std Bold;
+        letter-spacing: 0px;
+        color: #48888A;
+        opacity: 1;
+        font-size: 50px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+    .serviceTitle {font-size: 23px;font-weight: 600;}
+    
+#slide_img{
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-radius: 14px;
+    opacity: 0.62;
+    /* background: rgba(76, 175, 80, 0.3); */
+    background: transparent linear-gradient(237deg, var(--unnamed-color-ffffff) 0%, #48888A 100%) 0% 0% no-repeat padding-box;
+    /* background: transparent linear-gradient(237deg, #FFFFFF 0%, #48888A 100%) 0% 0% no-repeat padding-box; */
+}
+    .carousel-indicators [data-bs-target] {
+        box-sizing: content-box;
+        flex: 0 1 auto;
+        width: 30px;
+        height: 9px;
+        padding: 0;
+        margin-right: 3px;
+        margin-left: 3px;
+        text-indent: -999px;
+        cursor: pointer;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 0;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+        opacity: 0.5;
+        transition: opacity 0.6s ease;
+    }
+
+    .carousel-indicators .active {
+        opacity: 1;
+        background-color: black;
+    }
+
+    .item .active.img{
+        width:80%;
+    }

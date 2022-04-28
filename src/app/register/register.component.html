@@ -1,0 +1,60 @@
+<div class="row bigBk">
+    <div class="col-md-4">
+        <a class="navbar-brand"  routerLink="/" routerLinkActive="active">
+            <img id="logo_brand" style="max-width: 200px; margin-top: 10%; position: absolute;margin-left: 10%;" 
+            src="https://res.cloudinary.com/novative-software/image/upload/v1650079975/logo_tcushb.png" /></a>
+            <div class="formWrapper">
+                <form [formGroup]='registerForm' (ngSubmit)="registerForm.valid && register()" autocomplete="off" id="myForm">
+                    <h3 class="text-left" style="color:#48888A">Sign up</h3>
+                    <p >Its free to sign up and only take a minute</p>
+                    <app-text-input [formControl]='registerForm.controls["firstName"]' 
+                    label='First Name'></app-text-input>
+                
+                    <app-text-input [formControl]='registerForm.controls["lastName"]' 
+                    label='Last Name'></app-text-input>
+                    
+                    <!-- <app-date-input [formControl]='registerForm.controls["dob"]' 
+                    label='Date of Birth'></app-date-input> -->
+                
+                    <!-- <div class="row">
+                        <div class="col-xs-12 col-12 col-md-12 form-group mb-3">
+                          <input type="text"
+                                 placeholder="Date of Birth"
+                                 class="form-control"
+                                 bsDatepicker>
+                        </div>
+                      </div> -->
+                
+                    <app-text-input [formControl]='registerForm.controls["email"]' 
+                    label='Email Address'></app-text-input>
+                
+                    <app-text-input [formControl]='registerForm.controls["password"]' 
+                    label='password' [type]='"password"'></app-text-input>
+                    
+                    <app-text-input [formControl]='registerForm.controls["confirmPassword"]' 
+                    label='Confirm Password' [type]='"password"'></app-text-input>
+                    
+                <div class="form-group">
+                    <label class="radio-inline">
+                        <input type="checkbox" formControlName='agreeToTerms' required>
+                    </label> <label class="control-label ml-3" style="margin-right:10px;">
+                         I agree to <a routerLink="/terms-conditions">terms & conditions</a></label>
+                        </div>
+                
+                        <div class="row" *ngIf="validationErrors.length > 0">
+                            <ul class="text-danger">
+                                <li *ngFor="let error of validationErrors">
+                                    {{error}}
+                                </li>
+                            </ul>
+                        </div> 
+                    <div class="form-group text-center">
+                        <button [disabled]='!registerForm.valid' class="btn mr-2 our-button btn-block" type="submit">Sign Up</button>
+                        <p class="float-left mt-4">Already have an account. <a class="btn btn-link" routerLink="/account/login">Sign in</a></p>
+                    </div>
+                </form>
+              </div>  
+    
+        </div>
+    </div>
+    

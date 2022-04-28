@@ -1,0 +1,120 @@
+<div class="container mt-4">
+    <div class="row">
+             <div class="container">
+               <div class="row">
+        <div class="col-8 mt-4 mb-4">
+          <h2 class="text-uppercase">Account</h2>
+      </div>
+      <div class="col-4">
+          <div class="mt-4 mb-4 text-right"><p class="text-right">
+            <button class="btn btn-default btn-md pull-right" [ngClass]="!isEditing? 'show' : 'hide'" (click)="edit()"><i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-danger btn-md pull-right" [ngClass]="isEditing ? 'show' : 'hide'" (click)="cancel()"><i class="fa fa-times"></i> Cancel</button>
+          </p>
+        </div>
+  </div>
+               </div>
+                           <div class="row" id="accountContainer"> <div class="col-6">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                    <div id="formWrapper">
+                                       
+                                            
+                                            <div class="col text-center" *ngIf="this.userProfile">
+                                                <img class="img-fluid w-100" *ngIf="this.userProfile.images.length > 0" id="profileImage" style="max-width:200px;"
+                                                src="{{this.userProfile.images[0].url}}">
+    <br><h3 class="mt-2" style="
+    height: 33px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 33px/40px var(--unnamed-font-family-sf-pro-text);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-d19d01);
+    text-align: center;
+    font: normal normal 600 33px/40px SF Pro Text;
+    letter-spacing: 0px;
+    color: #D19D01;
+    opacity: 1;">{{this.userProfile.firstName}} {{this.userProfile.lastName}}</h3>
+    <p>User</p>
+                                            </div>
+                      
+                                                <div class="row" *ngIf="validationErrors.length > 0">
+                                                    <ul class="text-danger">
+                                                        <li *ngFor="let error of validationErrors">
+                                                            {{error}}
+                                                        </li>
+                                                    </ul>
+                                                </div> 
+                                      </div>  
+                            </div>
+                            </div>
+                            <div class="col-6">
+                              
+    <form *ngIf="customerProfileUpdateForm" [formGroup]='customerProfileUpdateForm' 
+    (ngSubmit)="customerProfileUpdateForm.valid && submitAccountUpdate()" autocomplete="off" id="myForm">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                    <div class="row">
+                                        <div class="col-12">
+                                              <div>
+                                                <div class="form-row">
+                                                    <div class="form-group col-md-6">
+                                                      <label for="inputEmail4"><b>First Name</b></label>
+                                                      <app-text-input [formControl]='customerProfileUpdateForm.controls["firstName"]' 
+                                                label='First Name'></app-text-input>
+                                                    </div>
+                                                    <div class="form-group col-md-6">
+                                                      <label for="inputPassword4"><b>Last Name</b></label>
+                                                      <app-text-input [formControl]='customerProfileUpdateForm.controls["lastName"]' 
+                                                label='Last Name'></app-text-input>
+                                                    </div>
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="salonFrequency" class=""><b>How often do you go to the salon?</b></label><br>
+                                                    <div *ngIf="this.userProfile">
+                                                      <div *ngFor="let a of this.userProfile.salonFrequency.options; let index = index">
+                                                        <input  type="radio" [formControl]='customerProfileUpdateForm.controls["salonFrequency"]' value="{{a.id}}"> {{a.value}}<br>
+                                                      </div>
+                                                    </div>
+                                               </div>
+                                                  <div class="form-group">
+                                                    <label for="servicesUsed"><b>Do you use any of the services listed below?</b></label><br/>
+                                                    <ng-multiselect-dropdown 
+                                                    [placeholder]="'Select services'" 
+                                                    [formControl]='customerProfileUpdateForm.controls["servicesUsed"]'
+                                                    [settings]="dropdownSettings"
+                                                    [data]="dropdownList"
+                                                    [(ngModel)]="selectedItems"
+                                                    (onDeSelect)="onItemDeSelect($event)"  
+                                                    (onSelect)="onItemSelect($event)"
+                                                    (onSelectAll)="onSelectAll($event)">
+                                                  </ng-multiselect-dropdown>
+                                                   
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="wearMakeup"><b>Do you wear makeup?</b></label><br/>
+                                                    <input type="radio" name="wearMakeup" value="1" [formControl]='customerProfileUpdateForm.controls["wearMakeup"]'>Yes 
+                                                    <input type="radio"name="wearMakeup" [formControl]='customerProfileUpdateForm.controls["wearMakeup"]' value="0">No
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="allergies"><b>Do you have any allergies?</b></label><br/>
+                                                    <input type="radio" name="allergies" value="1" [formControl]='customerProfileUpdateForm.controls["allergies"]'>Yes <input type="radio"  name="allergies" value="0"  [formControl]='customerProfileUpdateForm.controls["allergies"]'>No
+                                                  </div>
+                                                  <div class="form-group">
+                                                    <label for="hairType"><b>Hair type</b></label><br>
+                                                    <div *ngIf="this.userProfile">
+                                                      <div >
+                                                        <select class="form-control" [formControl]='customerProfileUpdateForm.controls["hairType"]'>
+                                                          <option selected="selected" >Select hair type</option>
+                                                          <option *ngFor="let a of this.userProfile.hairType.options; let index = index" value="{{a.id}}">{{a.name}}</option>
+                                                      </select>
+                                                      </div>
+                                                    </div>
+                                               </div>
+                                              </div><br>
+    </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-12">
+            <button [ngClass]="isEditing ? 'show':'hide'" [disabled]='!customerProfileUpdateForm.valid' class="btn mr-2 btn btn-block our-button mt-2" type="submit">Update</button>
+   </div>
+    </div>
+                                </div>
+                      </form></div></div>
+                        </div>
+    </div>    

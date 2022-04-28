@@ -1,0 +1,58 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 mt-4 mb-4">
+            <h2 class="text-uppercase">Service</h2>
+        </div>
+    </div>
+                            <div class="container" style="background-color: white;box-shadow: 0px 3px 35px #0000000F;">
+                           <div class="row"> <div class="col-6">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                <img class="img-fluid w-100" 
+                                src="{{this.service.imgUrl}}">
+                            </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                    <div class="row">
+                                        <div class="col-9">
+    <h3 style="letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-1e2022);
+    text-align: left;
+    font: normal normal normal 38px/46px Circular Std Black;
+    letter-spacing: 0px;
+    color: #1E2022;
+    opacity: 1;">{{this.service.name}}</h3>
+    <p>Time : {{this.service.duration}}</p>
+    </div>
+    <div class="col-3">
+        <div style="font: var(--unnamed-font-style-normal) normal bold 24px/29px var(--unnamed-font-family-sf-pro-text);
+        letter-spacing: var(--unnamed-character-spacing-0);color: var(--unnamed-color-1e2022);text-align: right;
+        font: normal normal bold 24px/29px SF Pro Text;letter-spacing: 0px;color: #1E2022;opacity: 1;">
+        <p>
+            <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly" style="color: #EAC739;font-size: 20px;"></rating>
+        </p>
+        <p>${{this.service.price}}</p></div>
+    </div>
+    </div> <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="mt-3 pb-3" style="height: 250px;">
+               <p style="letter-spacing: var(--unnamed-character-spacing-0);
+               color: var(--unnamed-color-1e2022);
+               text-align: left;
+               font: normal normal normal 29px/35px Circular Std Bold;
+               letter-spacing: 0px;
+               color: #1E2022;
+               opacity: 1;">Description</p> 
+               <p class="mt-3" style="font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 18px/32px Nunito;
+               letter-spacing: var(--unnamed-character-spacing-0);text-align: left;font: normal normal normal 18px/32px Nunito;
+               letter-spacing: 0px;color: #77838F;opacity: 1;">{{this.service.description}}</p>
+            </div>
+    <a class="float-right btn btn-block our-button mt-5"  routerLink="/services-request/test">Request Now</a></div>
+    </div>
+                                </div>
+  
+                               
+                            </div></div>
+                        </div>
+    </div>    

@@ -1,0 +1,12 @@
+.request-list-row .nav-link.active {
+    background: #48888A;
+    border-radius: 5px;
+    color: white;
+}
+
+.request-list-row .nav-link {
+    width: 390px;
+    text-align: center;
+    color: #48888A;
+    font-size: 22px;
+}

@@ -1,0 +1,6 @@
+#profileImage{
+    max-width: 188px;border-radius: 100px;
+}
+
+.show{display: block;}
+.hide{display: none;}

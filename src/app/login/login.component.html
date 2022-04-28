@@ -1,0 +1,31 @@
+<div class="row bigBk">
+    <div class="col-md-4">
+        <a class="navbar-brand"  routerLink="/" routerLinkActive="active">
+            <img id="logo_brand" style="max-width: 200px; margin-top: 10%; position: absolute;margin-left: 10%;" 
+            src="https://res.cloudinary.com/novative-software/image/upload/v1650079975/logo_tcushb.png" />
+        </a>
+        <div class="formWrapper">
+            <form [formGroup]='loginForm' id="myForm" (ngSubmit)="login()" autocomplete="off">
+                <br/>
+                <h3 class="text-left" style="color:#48888A">Sign in</h3>
+                <p>Its free to sign up and only take a minute</p>
+                <app-text-input [formControl]='loginForm.controls["Email"]' 
+                label='Enter your email'></app-text-input>
+                
+                <app-text-input [formControl]='loginForm.controls["Password"]' 
+                label='Enter your password'></app-text-input>
+                <a class="pull-right" style="color: black;padding-bottom: 25px;" routerLink='/account/forgotPassword'>Forgot Password</a><br>
+                <div class="row" *ngIf="validationErrors.length > 0">
+                    <ul class="text-danger">
+                        <li *ngFor="let error of validationErrors">{{error}}</li>
+                    </ul>
+                </div> 
+                <button [disabled]='!loginForm.valid' class="btn btn-lg btn-block my-2 my-sm-0 myButton" type="submit" style="color:white;">Sign In</button>
+                <div class="text-center" style="padding-top: 25px;">
+                    <a class="btn-link text-center" style="color: #3D3D3D" routerLink="/account/signup">Don't have an account yet? Sign up</a>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
+ 

@@ -1,0 +1,55 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 mt-4 mb-4">
+            <h2 class="text-uppercase">Appointment</h2>
+        </div>
+             <div class="container" style="background-color: white;box-shadow: 0px 3px 35px #0000000F;">
+                           <div class="row"> 
+                             <div class="col-12">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                  <tabset type="pills">
+                                    <tab heading="Pills 1">
+                                      <div class="row" *ngFor="let request of appointmentList; let index=index" >
+                                        <div class="col-md-6">
+                                          <p>{{request.serviceName}}<br/>{{request.serviceCost}}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <button class="btn btn-lg" style="background-color:#48888A;" *ngIf="request.isAccepted && request.isAppointment">Accepted</button>
+                                          <!-- <button class="btn btn-lg btn-default" *ngIf="!request.isAccepted && !request.isAppointment">Pending</button> -->
+                                        </div><hr>
+                                      </div>
+                                    </tab>
+                                    <tab heading="Pills 2">
+                                      <div class="row" *ngFor="let request of appointmentList; let index=index" >
+                                        <div class="col-md-6">
+                                          <p>{{request.serviceName}}<br/>{{request.serviceCost}}</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <button class="btn btn-lg" style="background-color:#48888A;" *ngIf="request.isAccepted">Accepted</button>
+                                          <button class="btn btn-lg" style="background-color:#48888A;" *ngIf="request.isCancelled">Cancelled</button>
+                                          <button class="btn btn-lg" style="background-color:#48888A;" *ngIf="request.isComplete">Completed</button>
+                                          <button class="btn btn-lg" style="background-color:#48888A;" *ngIf="request.isRescheduled">Rescheduled</button>
+                                        </div><hr>
+                                      </div>
+                                    </tab>
+                                  </tabset>
+                            </div>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+    </div>    
+
+    
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>

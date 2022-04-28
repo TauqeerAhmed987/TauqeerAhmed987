@@ -1,0 +1,205 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 mt-4 mb-4">
+            <h2 class="text-uppercase">Request</h2>
+        </div>
+        <!-- <app-alerts></app-alerts> -->
+             <div class="container request-container">
+                           <div class="row request-list-row"> <div class="col-12">
+                                <div class="pl-5 pr-5 pb-5 pt-5">
+                                  <tabset type="pills">
+                                    <tab class="all" heading="All">
+                                      <div class="row request-row" *ngFor="let request of myRequestList; let index=index" >
+                                        <div class="col-md-6">
+                                          <p>{{request.serviceName}}</p>
+                                          <p>{{request.serviceCost}}</p>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                          <button class="btn btn-lg accepted" style="background-color:#48888A;" *ngIf="request.isAccepted && request.isAppointment">Accepted</button>
+                                          <button class="btn btn-lg btn-default pending" *ngIf="!request.isAccepted && !request.isAppointment">Pending</button>
+                                        </div>
+                                      </div>
+                                    </tab>
+                                    <tab class="past" heading="Past">
+                                      
+                                      <div class="row request-row" *ngFor="let request of myRequestList; let index=index" >
+                                        <div class="col-md-6">
+                                          <p>{{request.serviceName}}</p>
+                                          <p>{{request.serviceCost}}</p>
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                          <button class="btn btn-lg accepted" style="background-color:#48888A;" *ngIf="request.isAccepted && request.isAppointment">Accepted</button>
+                                          <button class="btn btn-lg btn-default pending" *ngIf="!request.isAccepted && !request.isAppointment">Pending</button>
+                                        </div>
+                                      </div>
+                                    </tab>
+                                   
+
+                                  </tabset>
+                                 
+                            </div>
+                            </div>
+                            </div></div>
+                            <app-appointments></app-appointments>
+                        </div>
+    </div> 
+        <!-- Button to Open the Modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      Modal 1
+    </button>
+
+    <!-- Modal 1 -->
+    <div class="modal modal1" id="myModal">
+      <div class="modal1-inner">
+        <div class="modal-dialog modal1-dialog">
+          <div class="modal-content modal1-content">
+  
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-chevron-left"></i> Back</button>
+            </div>
+  
+            <!-- Modal body -->
+            <div class="modal-body modal1-body">
+             <div class="row modal1-toprow">
+              <div class="col-3">
+                <img src="../../../assets/man1.jpg" alt="">
+              </div>
+              <div class="col-9">
+                <h3>Elon Gated</h3>
+                <h4>Hair Specialist</h4>
+                <div class="stars-icon">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <span>(4.4)</span>
+                </div>
+              </div>
+             </div>
+             <div class="modal1-inner">
+               <h2>About</h2>
+               <p>On the other hand, we denounce with righteous at indignation and dislike men who are so beguiled in and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot go.</p>
+               <h2>Services</h2>
+               <div class="m1-btn">
+                <a href="#">Haircut</a>
+                <a href="#">Hair Coloring</a>
+               </div>
+               <h2>Availability</h2>
+               <div class="m1-btn">
+                <a href="#">09:00am</a>
+                <a href="#">10:00am</a>
+                <a href="#">04:00pm</a>
+               </div>
+             </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- Modal 1 --> 
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+      Modal 2
+    </button>
+
+     <!-- Modal 2 -->
+     <div class="modal modal2" id="myModal2">
+      <div class="modal1-inner">
+        <div class="modal-dialog modal1-dialog">
+          <div class="modal-content modal1-content">
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-chevron-left"></i> Back</button>
+            </div> -->
+            <!-- Modal body -->
+            <div class="modal-body modal2-body">
+             <div class="row no-gutters modal2-toprow align-items-center justify-content-between">
+              <div class="col-6">
+                <div class="row no-gutters modal2-innerrow align-items-center m-0">
+                  <div class="col-4">
+                    <img src="../../../assets/women1.png" alt="">
+                  </div>
+                  <div class="col-8">
+                    <h2>Hair Castle</h2>
+                    <h3>$250</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="r-btn">
+                  <h2>July 02, 2021</h2>
+                  <h3>Open a dispute</h3>
+                </div>
+              </div>
+             </div>
+             <div class="oppointment-time">
+               <h2>Your appointment is due in</h2>
+               <h3>20 minutes</h3>
+             </div>
+             <button class="arrived">I have arrived!</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- Modal 2 --> 
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">
+      Modal 3
+    </button>
+
+     <!-- Modal 3 -->
+     <div class="modal modal2 modal3" id="myModal3">
+      <div class="modal1-inner">
+        <div class="modal-dialog modal1-dialog">
+          <div class="modal-content modal1-content">
+            <!-- Modal Header -->
+            <!-- <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><i class="fa fa-chevron-left"></i> Back</button>
+            </div> -->
+            <!-- Modal body -->
+            <div class="modal-body modal2-body">
+             <div class="row no-gutters modal2-toprow align-items-center justify-content-between">
+              <div class="col-6">
+                <div class="row no-gutters modal2-innerrow align-items-center m-0">
+                  <div class="col-4">
+                    <img src="../../../assets/women1.png" alt="">
+                  </div>
+                  <div class="col-8">
+                    <h2>Hair Castle</h2>
+                    <h3>$250</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="r-btn">
+                  <h2>July 02, 2021</h2>
+                  <h3>Open a dispute</h3>
+                </div>
+              </div>
+             </div>
+             <div class="oppointment-time Experience">
+                <h1>Rate your experience</h1>
+                <div class="exp-star">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+                <form action="">
+                  <textarea name="" id="" cols="30" rows="5" placeholder="Type something" class="form-control"></textarea>
+                </form>
+             </div>
+             <button class="arrived">Submit Review</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- Modal 3 -->

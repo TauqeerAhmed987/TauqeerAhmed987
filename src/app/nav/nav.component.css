@@ -1,0 +1,140 @@
+.dropdown-toggle, .dropdown-item{
+    cursor: pointer;
+}
+#logo_brand{
+  width: 200px; margin-top: 20%;height: 150px;
+}
+img{
+  max-height: 85px;
+  border:2px solid #fff;
+  display: inline;
+}
+.navbar{font-size: 1.5em;margin-top:20%;}
+.curve{border-radius: 0 0 30% 30%;}
+.curveVendor{background: #F5C6B2 0% 0% no-repeat padding-box;}
+.curveUser{background: #132D2E 0% 0% no-repeat padding-box;}
+a.nav-link{
+  color: #48888A;
+}
+li.nav-item {
+  padding-right: 7%;
+}
+a.nav-link:active{
+  color: #fff;
+}
+
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+.global_img {
+  position: absolute;
+}
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  /* Provide sufficient contrast against white background */
+  a {
+    color: #ffff;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+  }
+  
+  .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+  }
+  
+  /* Sticky footer styles
+  -------------------------------------------------- */
+  html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .border-top {
+    border-top: 1px solid #e5e5e5;
+  }
+  .border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+  button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+  }
+  
+  /* Sticky footer styles
+  -------------------------------------------------- */
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+  }
+  .footer {
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+  }
+  
+  .activeBtn {
+      top: 82px;
+      left: 1533px;
+      width: 149px;
+      height: 50px;
+      background: var(--unnamed-color-48888a) 0% 0% no-repeat padding-box;
+      background: #48888A 0% 0% no-repeat padding-box;
+      border-radius: 10px;
+      opacity: 1;
+  
+  
+      top: 99px;
+  left: 1579px;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 15px/30px Circular Std Bold;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color:#ffffff;
+  text-align: center;
+  font: normal normal normal 15px/30px Circular Std Bold;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  }
+  
+  .footer .nav-item {
+      border-right: 1px solid lightgray;
+      margin: auto;
+      display: inline-block;
+      display: inline; /*IE7*/
+      width:-1px
+  }
+  
+  .footer .nav-item:last-child {border-right: 0px;}

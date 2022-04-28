@@ -1,0 +1,66 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h2>WELCOME BACK</h2>
+        </div>
+    </div>
+    <div class="row" *ngIf="slides">    
+        <div class="col-9">
+            <div class="row">
+                <div class="col-12 pl-3 pt-3 pb-3 pr-3" style="background-color: white;">
+               <div class="" *ngIf="slides.featuredServices"> 
+                   <carousel [itemsPerSlide]="itemsPerSlide"
+                    [singleSlideOffset]="false"
+                    [interval]="0"
+                    [indicatorsByChunk]="true">
+                <slide *ngFor="let slide of slides.featuredServices; let index=index">
+                <img [src]="slide.imgUrl" id="slide_img" alt="image slide">
+                <div class="carousel-caption"> <h4>{{slide.name}}</h4>
+                <a class="btn btn-sm" routerLink="/services-request/{{slide.url}}" style="background-color: white;">Request Now ></a>
+                </div>
+                </slide>
+                </carousel>
+            </div>
+            </div>
+            </div>
+            <div class="row pt-5">
+                <div class="col-12 pt-5 pl-3 pr-3" style="background-color: white;">
+                    <div *ngIf="slides.serviceCategories">
+                        <div class="row">
+                            <div class="col-6">
+                                <h2>Catgories</h2>
+                            </div><div class="col-6">
+                                <a class="float-right" routerLink="/categories">View All</a>
+                            </div>
+                        </div>
+                        <div class="row text-center mb-4 mt-4" style="padding-top: 16px;padding-bottom: 15px;">
+                            <div class="col-3" *ngFor="let category of slides.serviceCategories; let index=index">
+                               
+                               <a routerLink="/categories/{{category.url}}"> 
+                                   <img style="width: 80px;border-radius:45px;" src="{{category.imgUrl}}"><br>
+                            <span class="ml-1 mt-3" style="font-size: 24px;">{{category.name}}</span></a>
+                        </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+    </div>    
+    <div class="col-3">
+      <div *ngIf="slides.featuredVendorTypes" class="" style="background-color: white;padding:15px">  
+        <p style="font: normal normal normal 28px/34px Circular Std Black;">Top Stylist</p>
+<ul class="list-unstyled">
+    <li  *ngFor="let vendorType of slides.featuredVendorTypes; let index=index">
+        <a routerLink="/specialists/{{vendorType.name}}">   <div class="row" style="padding-top: 16px;padding-bottom: 15px;">
+            <div class="col-5"><img style="width:100%;border-radius: 8px;" src="{{vendorType.imgUrl}}"></div>
+            <div class="col-7">
+                <p class="ml-1">{{vendorType.name}}<br/>
+                    <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly" style="color: #EAC739;font-size: 20px;"></rating>
+                </p>
+            </div>
+        </div></a></li>
+        <li class="text-center"><a routerLink="/specialists">View All</a></li>
+</ul>
+    </div>
+</div>
+    </div>
+</div>

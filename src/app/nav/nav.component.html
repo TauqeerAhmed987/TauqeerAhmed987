@@ -1,0 +1,93 @@
+<ng-container *ngIf="myToken !==null">
+
+<div class="curve" [ngClass]="isVendor ? 'curveVendor':'curveUser'">
+  <div style="padding-left: 5%;padding-right: 5%;">
+    <div class="row">
+      <div class="col-md-2">
+        <a class="navbar-brand"  routerLink="/" routerLinkActive="active">
+          <img id="logo_brand" src="https://res.cloudinary.com/novative-software/image/upload/v1650079975/logo_tcushb.png" /></a>
+      </div>
+      <div class="col-md-7">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+          <div class="container">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" 
+                  aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+              <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button> -->
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                          aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse" id="headerOuter">
+                      <!-- <partial name="_LoginPartial"/> -->
+                      <ul class="navbar-nav flex-grow-1 align-items-md-center" id="menuList">
+                       
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/explore" routerLinkActive="active">Explore</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/request-list" routerLinkActive="active">Request</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" routerLink="/account" routerLinkActive="active">Account</a>
+                          </li>
+                      </ul>
+                  </div>
+          </div>
+        </nav> 
+      </div>
+      <div class="col-md-3">
+        <div class="" id="navbarCollapse" style="/* margin-top: 24%; */position: absolute;top: 70%;">
+          <div class="dropdown" dropdown>
+            <img src="{{user.photoUrl || './assets/user.png'}}" class="rounded-circle global_img" alt="{{user.firstName}}">
+            <a class="dropdown-toggle ml-2" dropdownToggle 
+            style="position: absolute;/* left: 25%; *//* top: 24%; */padding-left: 100px;margin-top:12px;font-size: 1.3em;">{{user.firstName | titlecase}}</a>
+            <div class="dropdown-menu mt-3" *dropdownMenu style="top: 80px;left: 80px;top: 45px;">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/business/appointment-list" *ngIf="isVendor" routerLinkActive="active">Appointments</a>
+              </li>
+              <a class="dropdown-item text-black" (click)="logout()">Logout</a>
+            </div>
+          </div>
+            
+            <!-- <div class="dropdown" *ngIf="(accountService.token$ | async)==null" dropdown>
+              <a class="dropdown-toggle text-light" dropdownToggle>Account</a>
+              <div class="dropdown-menu mt-3" *dropdownMenu>
+                <a class="dropdown-item" (click)="register()">Register</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" (click)="logout()">Login</a>
+              </div>
+              </div> -->
+  
+  <!-- <div *ngIf="(accountService.token$ | async)==null" class="form-inline mt-2 mt-md-0" autocomplete="off">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+          <a class="nav-link text-dark"(click)="login()">Sign in</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link btn-default activeBtn" routerLink='/register'>Register</a>
+      </li>
+  </ul>
+  </div> -->
+  
+  <!-- <form *ngIf="(accountService.token$ | async)==null" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()" autocomplete="off">
+    <input class="form-control mr-sm-2" type="text" 
+    placeholder="Username" name="username" [(ngModel)]="model.username">
+    <input class="form-control mr-sm-2" type="text" 
+    placeholder="Password" name="password" [(ngModel)]="model.password">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+  </form> -->
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</ng-container>

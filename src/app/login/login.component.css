@@ -1,0 +1,35 @@
+
+.formWrapper{
+    margin-top: 59%;padding: 15%;background-image: url('/assets/image_background.png');
+    }
+    
+    .col {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .myButton{
+        background-color: #EAC739;
+    }
+  
+    .bigBk { 
+        background: url('/assets/rsz_img3.png') no-repeat center center; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        min-height: 870px;
+      }
+
+    .hidNav{
+        display: none;
+    }
+    .hidFooter{
+        display: none;
+    }
+    #myForm > input{
+        height: 50px;
+    }
